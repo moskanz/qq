@@ -8,7 +8,6 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var five = require("johnny-five"), 
     board = new five.Board();
-var sleep = require('sleep');
 var throttle, rudder, aileron, elevator;
 board.on("ready", function() {
   
