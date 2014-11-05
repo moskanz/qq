@@ -22,28 +22,28 @@
     <tr>
       <td></td>
       <td width="100%">
-        <div class="control" data-name="throttle"></div>
+        <div class="control" data-name="throttle" data-init="0"></div>
       </td>
       <td>000</td>
     </tr>
     <tr>
       <td></td>
       <td>
-        <div class="control" data-name="rudder"></div>
+        <div class="control" data-name="rudder" data-init="90"></div>
       </td>
       <td></td>
     </tr>
     <tr>
       <td></td>
       <td>
-        <div class="control" data-name="elevator"></div>
+        <div class="control" data-name="elevator" data-init="90"></div>
       </td>
       <td></td>
     </tr>
     <tr>
       <td></td>
       <td>
-        <div class="control" data-name="aileron"></div>
+        <div class="control" data-name="aileron" data-init="90"></div>
       </td>
       <td></td>
     </tr>  
@@ -51,10 +51,11 @@
   <script>
   $.each($(".control"),function(i,item){
     var ctrl = $(item).data("name")
+    var val = $(item).data("init") 
     var log = $(item).parent().next()
     var name = $(item).parent().prev()
     name.html(ctrl)
-    control[ctrl] = $(item).slider({ max: 180, min: 0,
+    control[ctrl] = $(item).slider({ max: 180, min: 0, value: val,
       change: function( event, ui ) {
         log.html(ui.value)
         socket.emit(ctrl, ui.value);
