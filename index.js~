@@ -16,10 +16,8 @@ board.on("ready", function() {
   aileron = new five.Servo(6);
   elevator = new five.Servo(9);
 
-  throttle.to(0); 
-  rudder.to(90);
-  aileron.to(90);
-  elevator.to(90); 
+  //throttle.to(0); 
+  //rudder.to(180); 
   //sleep.usleep(1000); 
   //rudder.to(90);
 
